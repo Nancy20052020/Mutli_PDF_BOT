@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PDF Chat with Voice Answer</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+<header>
+  <h1>Chat with Your PDFs</h1>
+  <div class="hero-imgs">
+    <img src="{{ url_for('static', filename='pic1_bot.jpeg') }}" >
+  </div>
+</header>
+
+<section class="upload-section">
+  <label for="pdfInput">Upload PDF(s):</label>
+  <input type="file" id="pdfInput" accept="application/pdf" multiple />
+</section>
+
+<section class="qa-section">
+  <label for="queryInput">Ask a question about your PDFs:</label>
+  <input type="text" id="queryInput" placeholder="Type your question here" />
+  <button id="sendBtn">Send</button>
+</section>
+
+<section class="answer-section" id="answerSection" hidden>
+  <h2>Answer</h2>
+  <p id="answerText"></p>
+  <audio id="audioPlayer" controls></audio>
+</section>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

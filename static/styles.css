@@ -1,0 +1,102 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #1e1e2f;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  padding: 20px;
+  background: #292c44;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 5px #0008;
+}
+
+h1 {
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.hero-imgs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-imgs img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px #1f1f1f55;
+}
+
+.upload-section,
+.qa-section {
+  margin-top: 25px;
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+input[type="file"],
+input[type="text"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+input[type="file"] {
+  background: #2b2e4a;
+  color: #fff;
+}
+
+input[type="text"] {
+  background: #292c44;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background: #5a67d8;
+  color: white;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #434ab8;
+}
+
+.answer-section {
+  margin-top: 30px;
+  max-width: 600px;
+  width: 90%;
+  background: #292c44;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #000a;
+}
+
+audio {
+  margin-top: 10px;
+  width: 100%;
+  outline: none;
+  border-radius: 7px;
+}
