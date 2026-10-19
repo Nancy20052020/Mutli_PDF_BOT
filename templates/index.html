@@ -3,34 +3,54 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PDF Chat with Voice Answer</title>
+<title>Multi PDF Bot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 <body>
-<header>
-  <h1>Chat with Your PDFs</h1>
-  <div class="hero-imgs">
-    <img src="{{ url_for('static', filename='pic1_bot.jpeg') }}" >
-  </div>
-</header>
+<div class="page">
+  <header class="hero">
+    <img class="hero-photo" src="{{ url_for('static', filename='pic1_bot.jpeg') }}" alt="An open book with fanned pages" />
+    <div>
+      <p class="eyebrow">Multi PDF Bot</p>
+      <h1>Ask your documents out loud.</h1>
+      <p class="lede">Upload a few PDFs, ask one question, and get a written answer with a voice reading.</p>
+    </div>
+  </header>
 
-<section class="upload-section">
-  <label for="pdfInput">Upload PDF(s):</label>
-  <input type="file" id="pdfInput" accept="application/pdf" multiple />
-</section>
+  <p id="banner" class="banner" hidden></p>
 
-<section class="qa-section">
-  <label for="queryInput">Ask a question about your PDFs:</label>
-  <input type="text" id="queryInput" placeholder="Type your question here" />
-  <button id="sendBtn">Send</button>
-</section>
+  <section class="card" aria-labelledby="docs-heading">
+    <div class="card-head">
+      <h2 id="docs-heading">Documents</h2>
+      <span id="fileCount" class="meta">None yet</span>
+    </div>
+    <label class="dropzone" id="dropzone">
+      <input id="pdfInput" type="file" accept="application/pdf,.pdf" multiple />
+      <span class="drop-title">Drop PDFs here</span>
+      <span class="drop-hint">or click to browse · up to 5 files, 4 MB each</span>
+    </label>
+    <ul id="fileList" class="file-list"></ul>
+  </section>
 
-<section class="answer-section" id="answerSection" hidden>
-  <h2>Answer</h2>
-  <p id="answerText"></p>
-  <audio id="audioPlayer" controls></audio>
-</section>
+  <section class="card">
+    <label for="queryInput">Question</label>
+    <textarea id="queryInput" rows="3" maxlength="1000" placeholder="What do these documents agree on?"></textarea>
+    <div class="actions">
+      <p id="status" class="status" role="status"></p>
+      <button id="sendBtn" type="button">Ask</button>
+    </div>
+  </section>
 
+  <section class="card answer" id="answerSection" hidden>
+    <h2>Answer</h2>
+    <p id="answerText"></p>
+    <p id="ttsNote" class="note" hidden></p>
+    <audio id="audioPlayer" controls></audio>
+  </section>
+</div>
 <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
