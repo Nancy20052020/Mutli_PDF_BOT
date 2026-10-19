@@ -12,11 +12,7 @@ from PyPDF2.errors import PdfReadError
 
 load_dotenv()
 
-app = Flask(
-    __name__,
-    static_folder="public/static",
-    template_folder="templates",
-)
+app = Flask(__name__)
 
 MAX_FILES = 5
 MAX_FILE_BYTES = 4 * 1024 * 1024
